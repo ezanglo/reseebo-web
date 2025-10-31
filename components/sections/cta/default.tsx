@@ -1,6 +1,5 @@
 import { type VariantProps } from "class-variance-authority";
 import Image from "next/image";
-import { Play } from "lucide-react";
 import { ReactNode } from "react";
 
 import { siteConfig } from "@/config/site";

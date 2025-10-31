@@ -1,11 +1,11 @@
 import {
-  ScanLine,
-  FolderTree,
-  Lock,
-  ShieldCheck,
-  Search,
   Camera,
   FileText,
+  FolderTree,
+  Lock,
+  ScanLine,
+  Search,
+  ShieldCheck,
   Sparkles,
 } from "lucide-react";
 import { ReactNode } from "react";

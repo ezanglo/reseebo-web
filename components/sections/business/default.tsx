@@ -1,5 +1,5 @@
+import { FolderTree, Lock,ScanLine } from "lucide-react";
 import Image from "next/image";
-import { ScanLine, FolderTree, Lock } from "lucide-react";
 import { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";

@@ -1,5 +1,5 @@
+import { Camera,Search, ShieldCheck } from "lucide-react";
 import Image from "next/image";
-import { ShieldCheck, Search, Camera } from "lucide-react";
 import { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";

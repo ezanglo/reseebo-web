@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+
 import Footer from "@/components/sections/footer/default";
 import Navbar from "@/components/sections/navbar/default";
-import { LayoutLines } from "@/components/ui/layout-lines";
-import { siteConfig } from "@/config/site";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import Link from "next/link";
+import { LayoutLines } from "@/components/ui/layout-lines";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Support",

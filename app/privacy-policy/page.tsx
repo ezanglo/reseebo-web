@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
 import { readFile } from "fs/promises";
+import type { Metadata } from "next";
 import { join } from "path";
 import ReactMarkdown from "react-markdown";
+
 import Footer from "@/components/sections/footer/default";
 import Navbar from "@/components/sections/navbar/default";
 import { LayoutLines } from "@/components/ui/layout-lines";

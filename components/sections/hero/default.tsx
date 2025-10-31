@@ -1,11 +1,10 @@
 import { type VariantProps } from "class-variance-authority";
-import { Play, ArrowDown } from "lucide-react";
+import { ArrowDown } from "lucide-react";
+import Image from "next/image";
 import { ReactNode } from "react";
 
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
-
-import Image from "next/image";
 
 import { Badge } from "../../ui/badge";
 import { Button, buttonVariants } from "../../ui/button";

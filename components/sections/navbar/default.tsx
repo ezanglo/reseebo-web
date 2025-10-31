@@ -66,7 +66,7 @@ export default function Navbar({
   customNavigation,
   className,
 }: NavbarProps) {
-  const navLinks = [];
+  const navLinks: NavbarLink[] = [];
 
   return (
     <header className={cn("sticky top-0 z-50 -mb-4 px-4 pb-4", className)}>
