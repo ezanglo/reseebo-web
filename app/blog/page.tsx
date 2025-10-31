@@ -1,10 +1,40 @@
+import type { Metadata } from "next";
 import Footer from "@/components/sections/footer/default";
 import Navbar from "@/components/sections/navbar/default";
 import { LayoutLines } from "@/components/ui/layout-lines";
+import { siteConfig } from "@/config/site";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Blog",
-  description: "Latest news and updates from Reseebo",
+  description:
+    "Stay updated with the latest news, updates, and tips about receipt organization, warranty tracking, and productivity from Reseebo.",
+  openGraph: {
+    title: `Blog - ${siteConfig.name}`,
+    description:
+      "Stay updated with the latest news, updates, and tips about receipt organization, warranty tracking, and productivity from Reseebo.",
+    url: `${siteConfig.url}/blog`,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} - Blog`,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Blog - ${siteConfig.name}`,
+    description:
+      "Stay updated with the latest news, updates, and tips about receipt organization and warranty tracking.",
+    images: [siteConfig.ogImage],
+  },
+  alternates: {
+    canonical: `${siteConfig.url}/blog`,
+  },
 };
 
 export default function BlogPage() {

@@ -1,13 +1,47 @@
+import type { Metadata } from "next";
 import { readFile } from "fs/promises";
 import { join } from "path";
 import ReactMarkdown from "react-markdown";
 import Footer from "@/components/sections/footer/default";
 import Navbar from "@/components/sections/navbar/default";
 import { LayoutLines } from "@/components/ui/layout-lines";
+import { siteConfig } from "@/config/site";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy Policy for Reseebo",
+  description:
+    "Read Reseebo's Privacy Policy to understand how we protect your data. Learn about our commitment to privacy-first receipt organization and offline data storage.",
+  openGraph: {
+    title: `Privacy Policy - ${siteConfig.name}`,
+    description:
+      "Read Reseebo's Privacy Policy to understand how we protect your data and maintain your privacy.",
+    url: `${siteConfig.url}/privacy-policy`,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} - Privacy Policy`,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Privacy Policy - ${siteConfig.name}`,
+    description:
+      "Read Reseebo's Privacy Policy to understand how we protect your data.",
+    images: [siteConfig.ogImage],
+  },
+  alternates: {
+    canonical: `${siteConfig.url}/privacy-policy`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 async function getPrivacyPolicy() {

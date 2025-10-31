@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Footer from "@/components/sections/footer/default";
 import Navbar from "@/components/sections/navbar/default";
 import { LayoutLines } from "@/components/ui/layout-lines";
@@ -10,9 +11,37 @@ import {
 } from "@/components/ui/accordion";
 import Link from "next/link";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Support",
-  description: "Get help and support for Reseebo",
+  description:
+    "Get help and support for Reseebo. Find answers to frequently asked questions, contact support, and learn how to make the most of your receipt organizer.",
+  openGraph: {
+    title: `Support - ${siteConfig.name}`,
+    description:
+      "Get help and support for Reseebo. Find answers to frequently asked questions and contact support.",
+    url: `${siteConfig.url}/support`,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} - Support`,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Support - ${siteConfig.name}`,
+    description:
+      "Get help and support for Reseebo. Find answers to frequently asked questions.",
+    images: [siteConfig.ogImage],
+  },
+  alternates: {
+    canonical: `${siteConfig.url}/support`,
+  },
 };
 
 export default function SupportPage() {

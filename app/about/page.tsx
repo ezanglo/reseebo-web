@@ -1,10 +1,40 @@
+import type { Metadata } from "next";
 import Footer from "@/components/sections/footer/default";
 import Navbar from "@/components/sections/navbar/default";
 import { LayoutLines } from "@/components/ui/layout-lines";
+import { siteConfig } from "@/config/site";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "About",
-  description: "Learn more about Reseebo",
+  description:
+    "Learn more about Reseebo, the smart receipt organizer and warranty tracker. Discover how we help you manage receipts offline with AI-powered scanning.",
+  openGraph: {
+    title: `About - ${siteConfig.name}`,
+    description:
+      "Learn more about Reseebo, the smart receipt organizer and warranty tracker. Discover how we help you manage receipts offline with AI-powered scanning.",
+    url: `${siteConfig.url}/about`,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} - About`,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `About - ${siteConfig.name}`,
+    description:
+      "Learn more about Reseebo, the smart receipt organizer and warranty tracker.",
+    images: [siteConfig.ogImage],
+  },
+  alternates: {
+    canonical: `${siteConfig.url}/about`,
+  },
 };
 
 export default function AboutPage() {

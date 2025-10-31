@@ -1,10 +1,40 @@
+import type { Metadata } from "next";
 import Footer from "@/components/sections/footer/default";
 import Navbar from "@/components/sections/navbar/default";
 import { LayoutLines } from "@/components/ui/layout-lines";
+import { siteConfig } from "@/config/site";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Changelog",
-  description: "Recent updates and changes to Reseebo",
+  description:
+    "Stay updated with the latest changes, new features, and improvements to Reseebo. See what's new in our receipt organizer and warranty tracker.",
+  openGraph: {
+    title: `Changelog - ${siteConfig.name}`,
+    description:
+      "Stay updated with the latest changes, new features, and improvements to Reseebo.",
+    url: `${siteConfig.url}/changelog`,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} - Changelog`,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Changelog - ${siteConfig.name}`,
+    description:
+      "Stay updated with the latest changes, new features, and improvements to Reseebo.",
+    images: [siteConfig.ogImage],
+  },
+  alternates: {
+    canonical: `${siteConfig.url}/changelog`,
+  },
 };
 
 export default function ChangelogPage() {

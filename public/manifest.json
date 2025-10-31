@@ -1,0 +1,31 @@
+{
+  "name": "Reseebo - Your smart receipt organizer and warranty tracker",
+  "short_name": "Reseebo",
+  "description": "Organize receipts with AI-powered scanning. Track warranties, search instantly, all offline.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "screenshots": [
+    {
+      "src": "/home-screenshot.png",
+      "type": "image/png",
+      "sizes": "1170x2532"
+    }
+  ]
+}
+

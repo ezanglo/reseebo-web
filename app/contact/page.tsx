@@ -1,11 +1,39 @@
+import type { Metadata } from "next";
 import Footer from "@/components/sections/footer/default";
 import Navbar from "@/components/sections/navbar/default";
 import { LayoutLines } from "@/components/ui/layout-lines";
 import { siteConfig } from "@/config/site";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with the Reseebo team",
+  description:
+    "Get in touch with the Reseebo team. Have questions, feedback, or need support? We're here to help you with your receipt organization needs.",
+  openGraph: {
+    title: `Contact - ${siteConfig.name}`,
+    description:
+      "Get in touch with the Reseebo team. Have questions, feedback, or need support? We're here to help.",
+    url: `${siteConfig.url}/contact`,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} - Contact`,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Contact - ${siteConfig.name}`,
+    description: "Get in touch with the Reseebo team. We're here to help.",
+    images: [siteConfig.ogImage],
+  },
+  alternates: {
+    canonical: `${siteConfig.url}/contact`,
+  },
 };
 
 export default function ContactPage() {
