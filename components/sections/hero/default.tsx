@@ -5,10 +5,11 @@ import { ReactNode } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
+import Image from "next/image";
+
 import { Badge } from "../../ui/badge";
 import { Button, buttonVariants } from "../../ui/button";
 import { Mockup } from "../../ui/mockup";
-import Screenshot from "../../ui/screenshot";
 import { Section } from "../../ui/section";
 
 interface HeroButtonProps {
@@ -39,13 +40,13 @@ export default function Hero({
     </Badge>
   ),
   mockup = (
-    <Screenshot
-      srcLight="/dashboard-light.png"
-      srcDark="/dashboard-dark.png"
-      alt="Reseebo app screenshot"
-      width={1248}
-      height={765}
-      className="w-full"
+    <Image
+      src="/home-screenshot.png"
+      alt="Reseebo home screen"
+      fill
+      className="object-cover rounded-lg"
+      unoptimized
+      priority
     />
   ),
   buttons = [

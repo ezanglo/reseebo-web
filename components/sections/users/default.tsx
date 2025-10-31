@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ShieldCheck, Search, Camera } from "lucide-react";
 import { ReactNode } from "react";
 
@@ -46,12 +47,14 @@ export default function Users({
     },
   ],
   mockup = (
-    <div className="relative w-full h-full flex items-center justify-center">
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-200 via-purple-200 to-purple-400 rounded-lg" />
-      <span className="relative z-10 text-foreground font-medium text-center px-4">
-        Insert your Screenshot
-      </span>
-    </div>
+    <Image
+      src="/receipt-details-screenshot.png"
+      alt="Receipt details screen"
+      fill
+      className="object-cover rounded-lg"
+      unoptimized
+      priority
+    />
   ),
   className,
 }: UsersProps) {

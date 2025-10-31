@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ScanLine, FolderTree, Lock } from "lucide-react";
 import { ReactNode } from "react";
 
@@ -46,10 +47,14 @@ export default function Business({
     },
   ],
   mockup = (
-    <div className="relative w-full h-full flex items-center justify-center">
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-200 via-purple-200 to-purple-400 rounded-lg" />
-      <span className="relative z-10 text-foreground font-medium">Insert your Screenshot</span>
-    </div>
+    <Image
+      src="/add-receipt-screenshot.png"
+      alt="Add receipt screen"
+      fill
+      className="object-cover rounded-lg"
+      unoptimized
+      priority
+    />
   ),
   className,
 }: BusinessProps) {
