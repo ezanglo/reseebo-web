@@ -4,7 +4,6 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import LaunchUI from "../../logos/launch-ui";
 import {
   Footer,
   FooterBottom,
@@ -34,21 +33,30 @@ interface FooterProps {
 }
 
 export default function FooterSection({
-  logo = <LaunchUI />,
+  logo = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      enableBackground="new 0 0 24 24"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      className="shrink-0"
+      fill="none"
+      aria-label="Reseebo"
+    >
+      <rect fill="none" height="24" width="24" />
+      <path
+        d="M7,3H4v3H2V1h5V3z M22,6V1h-5v2h3v3H22z M7,21H4v-3H2v5h5V21z M20,18v3h-3v2h5v-5H20z M19,18c0,1.1-0.9,2-2,2H7 c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2h10c1.1,0,2,0.9,2,2V18z M15,8H9v2h6V8z M15,11H9v2h6V11z M15,14H9v2h6V14z"
+        fill="currentColor"
+      />
+    </svg>
+  ),
   name = "Reseebo",
   columns = [
     {
-      title: "Product",
+      title: "Resources",
       links: [
-        { text: "Changelog", href: "/changelog" },
         { text: "Support", href: "/support" },
-      ],
-    },
-    {
-      title: "Company",
-      links: [
-        { text: "About", href: "/about" },
-        { text: "Blog", href: "/blog" },
         { text: "Contact", href: "/contact" },
       ],
     },

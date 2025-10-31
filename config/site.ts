@@ -10,7 +10,7 @@ export const siteConfig = {
   links: {
     twitter: "https://twitter.com/reseebo",
     github: "https://github.com/reseebo",
-    email: "mailto:contact@reseebo.com",
+    email: "mailto:projects.ezraanglo@gmail.com",
     appStore: "#",
     googlePlay: "#",
   },

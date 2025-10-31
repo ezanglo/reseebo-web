@@ -58,25 +58,15 @@ export default function Navbar({
   ),
   name = "Reseebo",
   homeUrl = "/",
-  mobileLinks = [
-    { text: "Home", href: "/" },
-    { text: "Privacy Policy", href: "/privacy-policy" },
-    { text: "Terms and Conditions", href: "/terms-and-conditions" },
-    { text: "Support", href: "/support" },
-  ],
+  mobileLinks = [],
   actions = [
     { text: "Contact", href: "#contact", isButton: true, variant: "outline" },
   ],
-  showNavigation = true,
+  showNavigation = false,
   customNavigation,
   className,
 }: NavbarProps) {
-  const navLinks = [
-    { text: "Home", href: "/" },
-    { text: "Privacy Policy", href: "/privacy-policy" },
-    { text: "Terms and Conditions", href: "/terms-and-conditions" },
-    { text: "Support", href: "/support" },
-  ];
+  const navLinks = [];
 
   return (
     <header className={cn("sticky top-0 z-50 -mb-4 px-4 pb-4", className)}>
