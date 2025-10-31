@@ -60,7 +60,7 @@ export default function Navbar({
   homeUrl = "/",
   mobileLinks = [],
   actions = [
-    { text: "Contact", href: "#contact", isButton: true, variant: "outline" },
+    { text: "Contact", href: "/contact", isButton: true, variant: "outline" },
   ],
   showNavigation = false,
   customNavigation,

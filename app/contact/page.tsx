@@ -37,28 +37,51 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const emailAddress = siteConfig.links.email.replace("mailto:", "");
+  
   return (
     <main className="bg-background text-foreground min-h-screen w-full">
       <LayoutLines />
       <Navbar />
       <div className="max-w-container mx-auto px-4 py-16">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold mb-8">Contact Us</h1>
-          <div className="prose prose-invert max-w-none space-y-6">
-            <p>
-              This page is under construction. Contact information and form will be
-              added here soon.
-            </p>
-            <p>
-              For now, you can reach us at{" "}
+          <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
+          <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
+            Have questions, feedback, or need support? We&apos;d love to hear from you.
+            Send us an email and we&apos;ll get back to you as soon as possible.
+          </p>
+
+          <div className="space-y-8">
+            <section className="bg-muted/50 rounded-lg p-8 border border-border">
+              <h2 className="text-2xl font-semibold mb-4">Email Us</h2>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                For general inquiries, support questions, or feedback, please send us an email.
+              </p>
               <a
                 href={siteConfig.links.email}
-                className="text-primary hover:underline"
+                className="inline-flex items-center gap-2 text-primary hover:underline text-lg font-medium"
               >
-                {siteConfig.links.email.replace("mailto:", "")}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="inline-block"
+                >
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                {emailAddress}
               </a>
-              .
-            </p>
+              <p className="text-sm text-muted-foreground mt-4">
+                We typically respond within 24-48 hours during business days.
+              </p>
+            </section>
           </div>
         </div>
       </div>
