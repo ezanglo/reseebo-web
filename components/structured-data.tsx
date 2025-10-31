@@ -7,7 +7,7 @@ export function StructuredData() {
     name: siteConfig.name,
     description: siteConfig.description,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/og.jpg`,
+    logo: `${siteConfig.url}/og.png`,
     sameAs: [
       siteConfig.links.twitter,
       siteConfig.links.github,

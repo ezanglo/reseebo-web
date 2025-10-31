@@ -48,7 +48,7 @@ export default function Business({
   ],
   mockup = (
     <Image
-      src="/add-receipt-screenshot.png"
+      src="/screenshot-receipt-details.png"
       alt="Add receipt screen"
       fill
       className="object-cover rounded-lg"

@@ -46,7 +46,7 @@ export default function CTA({
   ],
   mockup = (
     <Image
-      src="/search-screenshot.png"
+      src="/screenshot-home-data.png"
       alt="Search screen"
       fill
       className="object-cover rounded-lg"

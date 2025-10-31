@@ -23,6 +23,8 @@ interface HeroProps {
   title?: string;
   description?: string;
   mockup?: ReactNode | false;
+  mockupFront?: ReactNode | false;
+  mockupBack?: ReactNode | false;
   badge?: ReactNode | false;
   buttons?: HeroButtonProps[] | false;
   className?: string;
@@ -38,10 +40,21 @@ export default function Hero({
       </span>
     </Badge>
   ),
-  mockup = (
+  mockup,
+  mockupFront = (
     <Image
-      src="/home-screenshot.png"
+      src="/screenshot-home.png"
       alt="Reseebo home screen"
+      fill
+      className="object-cover rounded-lg"
+      unoptimized
+      priority
+    />
+  ),
+  mockupBack = (
+    <Image
+      src="/screenshot-add-receipt.png"
+      alt="Add receipt screen"
       fill
       className="object-cover rounded-lg"
       unoptimized
@@ -101,7 +114,7 @@ export default function Hero({
           </div>
 
           {/* Right Column - Phone Mockups */}
-          {mockup !== false && (
+          {(mockup !== false || (mockupFront !== false && mockupBack !== false)) && (
             <div className="relative w-full pt-12">
               <div className="relative flex items-center justify-center">
                 {/* Background Gradient Circles */}
@@ -110,13 +123,12 @@ export default function Hero({
                 
                 {/* Front Phone */}
                 <div className="relative z-10 transform -rotate-6">
-                  
-                    <Mockup
-                      type="mobile"
-                      className=""
-                    >
-                      {mockup}
-                    </Mockup>
+                  <Mockup
+                    type="mobile"
+                    className=""
+                  >
+                    {mockup || mockupFront}
+                  </Mockup>
                 </div>
 
                 {/* Back Phone */}
@@ -125,7 +137,7 @@ export default function Hero({
                     type="mobile"
                     className="ring-2 ring-purple-400/50 animate-appear opacity-0 delay-900"
                   >
-                    {mockup}
+                    {mockup || mockupBack}
                   </Mockup>
                 </div>
               </div>

@@ -12,17 +12,12 @@
       "src": "/favicon.ico",
       "sizes": "any",
       "type": "image/x-icon"
-    },
-    {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
     }
   ],
   "categories": ["productivity", "utilities"],
   "screenshots": [
     {
-      "src": "/home-screenshot.png",
+      "src": "/screenshot-home.png",
       "type": "image/png",
       "sizes": "1170x2532"
     }

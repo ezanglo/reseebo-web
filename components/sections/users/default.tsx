@@ -48,7 +48,7 @@ export default function Users({
   ],
   mockup = (
     <Image
-      src="/receipt-details-screenshot.png"
+      src="/screenshot-search.png"
       alt="Receipt details screen"
       fill
       className="object-cover rounded-lg"

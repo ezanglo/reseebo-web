@@ -1,10 +1,10 @@
 export const siteConfig = {
   name: "Reseebo",
   tagline: "Your smart receipt organizer and warranty tracker",
-  url: "https://reseebo.com",
-  getStartedUrl: "https://reseebo.com/#download",
+  url: "https://reseebo.vercel.app",
+  getStartedUrl: "https://reseebo.vercel.app/#download",
   downloadUrl: "/#download",
-  ogImage: "https://reseebo.com/og.jpg",
+  ogImage: "https://reseebo.vercel.app/og.png",
   description:
     "Reseebo: Organize receipts with AI-powered scanning. Track warranties, search instantly, all offline. Free download.",
   links: {
