@@ -1,11 +1,12 @@
 import { type VariantProps } from "class-variance-authority";
+import { Play } from "lucide-react";
 import { ReactNode } from "react";
 
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 import { Button, buttonVariants } from "../../ui/button";
-import Glow from "../../ui/glow";
+import { Mockup } from "../../ui/mockup";
 import { Section } from "../../ui/section";
 
 interface CTAButtonProps {
@@ -17,49 +18,105 @@ interface CTAButtonProps {
 }
 
 interface CTAProps {
+  badge?: string;
   title?: string;
+  subtitle?: string;
+  tagline?: string;
   buttons?: CTAButtonProps[] | false;
+  mockup?: ReactNode | false;
   className?: string;
 }
 
 export default function CTA({
-  title = "Ready to organize your receipts?",
+  badge = "READY TO GET STARTED",
+  title = "Never lose a receipt again",
+  subtitle = "Join thousands of users who are organizing their receipts effortlessly with Reseebo. Download free today and experience the peace of mind that comes with smart receipt management.",
+  tagline = "Your smart receipt organizer and warranty tracker",
   buttons = [
     {
       href: siteConfig.downloadUrl,
       text: "Download Free",
       variant: "default",
     },
+    {
+      href: "#features",
+      text: "Learn More",
+      variant: "outline",
+    },
   ],
+  mockup = (
+    <div className="relative w-full h-full flex items-center justify-center">
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-200 via-purple-200 to-purple-400 rounded-lg" />
+      <span className="relative z-10 text-white font-bold text-center px-4">
+        Insert your Screenshot
+      </span>
+    </div>
+  ),
   className,
 }: CTAProps) {
   return (
-    <Section className={cn("group relative overflow-hidden", className)}>
-      <div className="max-w-container relative z-10 mx-auto flex flex-col items-center gap-6 text-center sm:gap-8">
-        <h2 className="max-w-[640px] text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight">
-          {title}
-        </h2>
-        {buttons !== false && buttons.length > 0 && (
-          <div className="flex justify-center gap-4">
-            {buttons.map((button, index) => (
-              <Button
-                key={index}
-                variant={button.variant || "default"}
-                size="lg"
-                asChild
+    <Section className={cn("relative overflow-hidden", className)}>
+      {/* Background Wave */}
+      <div className="absolute bottom-0 left-0 right-0 h-64 bg-muted/30 rounded-t-[3rem] -mt-32" />
+      
+      <div className="max-w-container relative z-10 mx-auto flex flex-col items-center gap-12 text-center">
+        {/* Top Section */}
+        <div className="flex flex-col items-center gap-4 max-w-2xl">
+          <span className="text-sm font-semibold uppercase tracking-wider text-primary">
+            {badge}
+          </span>
+          <h2 className="text-3xl leading-tight font-bold sm:text-4xl sm:leading-tight lg:text-5xl">
+            {title}
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            {subtitle}
+          </p>
+        </div>
+
+        {/* Phone Mockup */}
+        {mockup !== false && (
+          <div className="relative w-full flex justify-center pt-8">
+            <div className="relative">
+              {/* Background Gradient Circles */}
+              <div className="absolute -left-16 -bottom-16 w-64 h-64 bg-gradient-to-br from-orange-400 to-red-500 rounded-full opacity-30 blur-3xl" />
+              <div className="absolute -right-16 -top-16 w-64 h-64 bg-gradient-to-br from-blue-500 to-teal-600 rounded-full opacity-30 blur-3xl" />
+              
+              <Mockup
+                type="mobile"
+                className="shadow-2xl"
               >
-                <a href={button.href}>
-                  {button.icon}
-                  {button.text}
-                  {button.iconRight}
-                </a>
-              </Button>
-            ))}
+                {mockup}
+              </Mockup>
+            </div>
           </div>
         )}
-      </div>
-      <div className="absolute top-0 left-0 h-full w-full translate-y-[1rem] opacity-80 transition-all duration-500 ease-in-out group-hover:translate-y-[-2rem] group-hover:opacity-100">
-        <Glow variant="bottom" />
+
+        {/* Bottom Section with Logo and Buttons */}
+        <div className="flex flex-col items-center gap-8 pt-8">
+          <div className="flex flex-col items-center gap-2">
+            <h3 className="text-2xl font-bold">{siteConfig.name}</h3>
+            <p className="text-muted-foreground">{tagline}</p>
+          </div>
+          
+          {buttons !== false && buttons.length > 0 && (
+            <div className="flex flex-wrap justify-center gap-4">
+              {buttons.map((button, index) => (
+                <Button
+                  key={index}
+                  variant={button.variant || "default"}
+                  size="lg"
+                  asChild
+                >
+                  <a href={button.href}>
+                    {button.icon}
+                    {button.text}
+                    {button.iconRight}
+                  </a>
+                </Button>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </Section>
   );

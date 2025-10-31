@@ -48,7 +48,9 @@ export default function Navbar({
     { text: "Terms and Condition", href: "/terms-and-condition" },
     { text: "Support", href: "/support" },
   ],
-  actions = [],
+  actions = [
+    { text: "Contact", href: "#contact", isButton: true, variant: "outline" },
+  ],
   showNavigation = true,
   customNavigation,
   className,

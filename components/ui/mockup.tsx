@@ -1,4 +1,5 @@
 import { cva, type VariantProps } from "class-variance-authority";
+import Image from "next/image";
 import React from "react";
 
 import { cn } from "@/lib/utils";
@@ -22,13 +23,42 @@ export interface MockupProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof mockupVariants> {}
 
-function Mockup({ className, type, ...props }: MockupProps) {
+function Mockup({ className, type, children, ...props }: MockupProps) {
+  if (type === "mobile") {
+    return (
+      <div
+        data-slot="mockup"
+        className={cn("relative w-[350px] h-[700px]", className)}
+        {...props}
+      >
+        {/* iPhone Mockup Background */}
+        <Image
+          src="/iphone-mockup.png"
+          alt="iPhone mockup"
+          fill
+          className="object-contain pointer-events-none z-10"
+          priority
+        />
+        {/* Screen Content - positioned to match iPhone screen area */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+          <div className="relative w-[270px] h-[585px] mt-[38px] rounded-[40px] overflow-hidden pointer-events-auto">
+            <div className="absolute inset-0 w-full h-full">
+              {children}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div
       data-slot="mockup"
       className={cn(mockupVariants({ type, className }))}
       {...props}
-    />
+    >
+      {children}
+    </div>
   );
 }
 
