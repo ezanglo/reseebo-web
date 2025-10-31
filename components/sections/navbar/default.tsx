@@ -61,7 +61,7 @@ export default function Navbar({
   mobileLinks = [
     { text: "Home", href: "/" },
     { text: "Privacy Policy", href: "/privacy-policy" },
-    { text: "Terms and Condition", href: "/terms-and-condition" },
+    { text: "Terms and Conditions", href: "/terms-and-conditions" },
     { text: "Support", href: "/support" },
   ],
   actions = [
@@ -74,7 +74,7 @@ export default function Navbar({
   const navLinks = [
     { text: "Home", href: "/" },
     { text: "Privacy Policy", href: "/privacy-policy" },
-    { text: "Terms and Condition", href: "/terms-and-condition" },
+    { text: "Terms and Conditions", href: "/terms-and-conditions" },
     { text: "Support", href: "/support" },
   ];
 

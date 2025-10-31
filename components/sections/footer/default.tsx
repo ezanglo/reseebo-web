@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Link from "next/link";
 
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -39,31 +40,30 @@ export default function FooterSection({
     {
       title: "Product",
       links: [
-        { text: "Changelog", href: siteConfig.url },
-        { text: "Documentation", href: siteConfig.url },
+        { text: "Changelog", href: "/changelog" },
+        { text: "Support", href: "/support" },
       ],
     },
     {
       title: "Company",
       links: [
-        { text: "About", href: siteConfig.url },
-        { text: "Careers", href: siteConfig.url },
-        { text: "Blog", href: siteConfig.url },
+        { text: "About", href: "/about" },
+        { text: "Blog", href: "/blog" },
+        { text: "Contact", href: "/contact" },
       ],
     },
     {
-      title: "Contact",
+      title: "Legal",
       links: [
-        { text: "Discord", href: siteConfig.url },
-        { text: "Twitter", href: siteConfig.url },
-        { text: "Github", href: siteConfig.links.github },
+        { text: "Privacy Policy", href: "/privacy-policy" },
+        { text: "Terms and Conditions", href: "/terms-and-conditions" },
       ],
     },
   ],
-  copyright = "© 2025 Mikołaj Dobrucki. All rights reserved",
+  copyright = "© 2025 Reseebo. All rights reserved.",
   policies = [
-    { text: "Privacy Policy", href: siteConfig.url },
-    { text: "Terms of Service", href: siteConfig.url },
+    { text: "Privacy Policy", href: "/privacy-policy" },
+    { text: "Terms and Conditions", href: "/terms-and-conditions" },
   ],
   showModeToggle = true,
   className,
@@ -83,13 +83,13 @@ export default function FooterSection({
               <FooterColumn key={index}>
                 <h3 className="text-md pt-1 font-semibold">{column.title}</h3>
                 {column.links.map((link, linkIndex) => (
-                  <a
+                  <Link
                     key={linkIndex}
                     href={link.href}
                     className="text-muted-foreground text-sm"
                   >
                     {link.text}
-                  </a>
+                  </Link>
                 ))}
               </FooterColumn>
             ))}
@@ -98,9 +98,9 @@ export default function FooterSection({
             <div>{copyright}</div>
             <div className="flex items-center gap-4">
               {policies.map((policy, index) => (
-                <a key={index} href={policy.href}>
+                <Link key={index} href={policy.href}>
                   {policy.text}
-                </a>
+                </Link>
               ))}
               {showModeToggle && <ModeToggle />}
             </div>
