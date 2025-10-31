@@ -1,11 +1,9 @@
 import { type VariantProps } from "class-variance-authority";
-import { ArrowRightIcon } from "lucide-react";
 import { ReactNode } from "react";
 
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import Github from "../../logos/github";
 import { Badge } from "../../ui/badge";
 import { Button, buttonVariants } from "../../ui/button";
 import Glow from "../../ui/glow";
@@ -31,13 +29,13 @@ interface HeroProps {
 }
 
 export default function Hero({
-  title = "Give your big idea the design it deserves",
-  description = "Professionally designed blocks and templates built with React, Shadcn/ui and Tailwind that will help your product stand out.",
+  title = "Never lose a receipt again",
+  description = "Your smart receipt organizer and warranty tracker. Organize, search, and manage receipts with AI-powered scanning—all offline, all private.",
   mockup = (
     <Screenshot
       srcLight="/dashboard-light.png"
       srcDark="/dashboard-dark.png"
-      alt="Launch UI app screenshot"
+      alt="Reseebo app screenshot"
       width={1248}
       height={765}
       className="w-full"
@@ -46,25 +44,20 @@ export default function Hero({
   badge = (
     <Badge variant="outline" className="animate-appear">
       <span className="text-muted-foreground">
-        New version of Launch UI is out!
+        100% Offline • Privacy First • No Account Required
       </span>
-      <a href={siteConfig.getStartedUrl} className="flex items-center gap-1">
-        Get started
-        <ArrowRightIcon className="size-3" />
-      </a>
     </Badge>
   ),
   buttons = [
     {
-      href: siteConfig.getStartedUrl,
-      text: "Get Started",
+      href: siteConfig.downloadUrl,
+      text: "Download Free",
       variant: "default",
     },
     {
-      href: siteConfig.links.github,
-      text: "Github",
+      href: "#features",
+      text: "Learn More",
       variant: "glow",
-      icon: <Github className="mr-2 size-4" />,
     },
   ],
   className,

@@ -23,11 +23,11 @@ interface CTAProps {
 }
 
 export default function CTA({
-  title = "Start building",
+  title = "Ready to organize your receipts?",
   buttons = [
     {
-      href: siteConfig.getStartedUrl,
-      text: "Get Started",
+      href: siteConfig.downloadUrl,
+      text: "Download Free",
       variant: "default",
     },
   ],

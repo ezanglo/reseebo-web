@@ -1,16 +1,16 @@
 import {
-  BlocksIcon,
-  EclipseIcon,
-  FastForwardIcon,
-  LanguagesIcon,
-  MonitorSmartphoneIcon,
-  RocketIcon,
-  ScanFaceIcon,
-  SquarePenIcon,
+  CameraIcon,
+  FileTextIcon,
+  FolderTreeIcon,
+  LockIcon,
+  ScanLineIcon,
+  SearchIcon,
+  ShieldCheckIcon,
+  SparklesIcon,
 } from "lucide-react";
 import { ReactNode } from "react";
 
-import { Item, ItemDescription,ItemIcon, ItemTitle } from "../../ui/item";
+import { Item, ItemDescription, ItemIcon, ItemTitle } from "../../ui/item";
 import { Section } from "../../ui/section";
 
 interface ItemProps {
@@ -26,50 +26,47 @@ interface ItemsProps {
 }
 
 export default function Items({
-  title = "Everything you need. Nothing you don't.",
+  title = "Everything you need to organize your receipts",
   items = [
     {
-      title: "Accessibility first",
-      description: "Fully WCAG 2.0 compliant, made with best a11y practices",
-      icon: <ScanFaceIcon className="size-5 stroke-1" />,
+      title: "AI-Powered Scanning",
+      description: "Google Gemini AI automatically extracts merchant, date, amount, and items from receipt photos—no manual entry",
+      icon: <ScanLineIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Responsive design",
-      description: "Looks and works great on any device and screen size",
-      icon: <MonitorSmartphoneIcon className="size-5 stroke-1" />,
+      title: "Smart Organization",
+      description: "Automatic categorization and custom tags help you organize receipts by type, warranty status, or importance",
+      icon: <FolderTreeIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Light and dark mode",
-      description:
-        "Seamless switching between color schemes, 6 themes included",
-      icon: <EclipseIcon className="size-5 stroke-1" />,
+      title: "Offline-First Privacy",
+      description: "All data stored locally on your device. No cloud sync, no account required—complete privacy and control",
+      icon: <LockIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Easy to customize",
-      description: "Flexible options to match your product or brand",
-      icon: <BlocksIcon className="size-5 stroke-1" />,
+      title: "Warranty Tracking",
+      description: "Automatically detect and track warranty information, return policies, and expiration dates on receipts",
+      icon: <ShieldCheckIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Top-level performance",
-      description: "Made for lightning-fast load times and smooth interactions",
-      icon: <FastForwardIcon className="size-5 stroke-1" />,
+      title: "Lightning-Fast Search",
+      description: "Find any receipt instantly with indexed search across titles, notes, tags, categories, and merchant names",
+      icon: <SearchIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Production ready",
-      description: "Thoroughly tested and launch-prepared",
-      icon: <RocketIcon className="size-5 stroke-1" />,
+      title: "Easy Capture",
+      description: "Take photos directly with your camera or select from gallery—beautiful, intuitive interface",
+      icon: <CameraIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Made for localisation",
-      description:
-        "Easy to implement support for multiple languages and regions",
-      icon: <LanguagesIcon className="size-5 stroke-1" />,
+      title: "Structured Data",
+      description: "Extracts structured fields: merchant, date, amount, subtotal, tax, receipt number, and payment method",
+      icon: <FileTextIcon className="size-5 stroke-1" />,
     },
     {
-      title: "CMS friendly",
-      description:
-        "Built to work with your any headless content management system",
-      icon: <SquarePenIcon className="size-5 stroke-1" />,
+      title: "Edit & Review",
+      description: "Easy to review and edit all extracted information. Auto-generates notes with purchased items",
+      icon: <SparklesIcon className="size-5 stroke-1" />,
     },
   ],
   className,
