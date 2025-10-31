@@ -34,7 +34,7 @@ interface FooterProps {
 
 export default function FooterSection({
   logo = <LaunchUI />,
-  name = "Launch UI",
+  name = "Reseebo",
   columns = [
     {
       title: "Product",

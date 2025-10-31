@@ -12,7 +12,6 @@ import {
   NavbarLeft,
   NavbarRight,
 } from "../../ui/navbar";
-import Navigation from "../../ui/navigation";
 import { Sheet, SheetContent, SheetTrigger } from "../../ui/sheet";
 
 interface NavbarLink {
@@ -42,26 +41,26 @@ interface NavbarProps {
 
 export default function Navbar({
   logo = <LaunchUI />,
-  name = "Launch UI",
-  homeUrl = siteConfig.url,
+  name = "Reseebo",
+  homeUrl = "/",
   mobileLinks = [
-    { text: "Getting Started", href: siteConfig.url },
-    { text: "Components", href: siteConfig.url },
-    { text: "Documentation", href: siteConfig.url },
+    { text: "Home", href: "/" },
+    { text: "Privacy Policy", href: "/privacy-policy" },
+    { text: "Terms and Condition", href: "/terms-and-condition" },
+    { text: "Support", href: "/support" },
   ],
-  actions = [
-    { text: "Sign in", href: siteConfig.url, isButton: false },
-    {
-      text: "Get Started",
-      href: siteConfig.url,
-      isButton: true,
-      variant: "default",
-    },
-  ],
+  actions = [],
   showNavigation = true,
   customNavigation,
   className,
 }: NavbarProps) {
+  const navLinks = [
+    { text: "Home", href: "/" },
+    { text: "Privacy Policy", href: "/privacy-policy" },
+    { text: "Terms and Condition", href: "/terms-and-condition" },
+    { text: "Support", href: "/support" },
+  ];
+
   return (
     <header className={cn("sticky top-0 z-50 -mb-4 px-4 pb-4", className)}>
       <div className="fade-bottom bg-background/15 absolute left-0 h-24 w-full backdrop-blur-lg"></div>
@@ -75,7 +74,21 @@ export default function Navbar({
               {logo}
               {name}
             </a>
-            {showNavigation && (customNavigation || <Navigation />)}
+            {showNavigation && (
+              customNavigation || (
+                <nav className="hidden md:flex items-center gap-6">
+                  {navLinks.map((link, index) => (
+                    <a
+                      key={index}
+                      href={link.href}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.text}
+                    </a>
+                  ))}
+                </nav>
+              )
+            )}
           </NavbarLeft>
           <NavbarRight>
             {actions.map((action, index) =>
