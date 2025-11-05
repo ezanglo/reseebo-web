@@ -3,7 +3,7 @@ export const siteConfig = {
   tagline: "Your smart receipt organizer and warranty tracker",
   url: "https://reseebo.vercel.app",
   getStartedUrl: "https://reseebo.vercel.app/#download",
-  downloadUrl: "/#download",
+  downloadUrl: "https://apps.apple.com/app/reseebo/id6754756601",
   ogImage: "https://reseebo.vercel.app/og.png",
   description:
     "Reseebo: Organize receipts with AI-powered scanning. Track warranties, search instantly, all offline. Free download.",
@@ -11,7 +11,7 @@ export const siteConfig = {
     twitter: "https://twitter.com/reseebo",
     github: "https://github.com/reseebo",
     email: "mailto:projects.ezraanglo@gmail.com",
-    appStore: "#",
+    appStore: "https://apps.apple.com/app/reseebo/id6754756601",
     googlePlay: "#",
   },
   pricing: {
